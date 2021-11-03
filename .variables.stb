@@ -1,6 +1,8 @@
 [Variables]
-filament_used = 947.23379
-filterusetime = 2032
-lastservicetime = 2032
-totalprintingtime = 2032
+filament_used = 3564.04904
+filterusetime = 11433
+lastservicetime = 11433
+plate_array = [('First', 0.24)]
+plate_index = 0
+totalprintingtime = 11433
 
