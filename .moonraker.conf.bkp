@@ -1,73 +1,44 @@
 [server]
 host = 0.0.0.0
 port = 7125
-klippy_uds_address = /tmp/klippy_uds
 enable_debug_logging = False
 max_upload_size = 1024
-ssl_port = 7130
 
 [file_manager]
 config_path = ~/klipper_config
 log_path = ~/klipper_logs
-queue_gcode_uploads = False
 enable_object_processing = False
 
-[database]
-database_path = ~/.moonraker_database
-
-[data_store]
-temperature_store_size = 1200
-gcode_store_size = 1000
-
-[job_queue]
-load_on_startup = False
-automatic_transition = False
-
 [authorization]
-force_logins = False
 cors_domains = 
-	*.local
-	*://my.mainsail.xyz
-	*://app.fluidd.xyz
-	*://voron350
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://app.fluidd.xyz
+	http://*.local
+	http://*.lan
 trusted_clients = 
-	letron2.local
-	192.168.178.0/24
-	2a02:810d:9340:33f6::/64
-	172.29.199.0/25
-	127.0.0.1
-	172.18.199.0/24
-	172.18.198.0/24
-	172.18.200.0/24
-	192.168.1.0/24
+	10.0.0.0/8
+	127.0.0.0/8
+	192.168.0.0/16
+	172.18.0.0/16
+	FE80::/10
+	::1/128
 
 [octoprint_compat]
 
 [history]
 
 [update_manager]
-channel = dev
-enable_repo_debug = True
-enable_auto_refresh = True
-enable_system_updates = True
-refresh_interval = 24
+refresh_interval = 168
 
 [update_manager mainsail]
 type = web
-channel = beta
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
-[update_manager kiauh]
-type = git_repo
-path = ~/kiauh
-origin = https://github.com/th33xitus/kiauh.git
-is_system_service = False
-
-[update_manager z_calibration]
+[update_manager client z_calibration]
 type = git_repo
 path = ~/klipper_z_calibration
 origin = https://github.com/protoloft/klipper_z_calibration.git
 install_script = install.sh
-managed_services = klipper
 

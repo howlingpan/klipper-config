@@ -1,4 +1,3 @@
-.DS_Store
 *.log
 .fluidd.json
 .mainsail.json
@@ -10,3 +9,4 @@ printer-*.cfg
 /logs
 *.txt
 .moonraker.conf.bkp
+.DS_Store
